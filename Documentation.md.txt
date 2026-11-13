@@ -1,0 +1,43 @@
+
+---
+
+### 4. File `Documentation.md` (Hướng dẫn API)
+
+File này giúp Au hiểu rõ các hàm. Viết theo phong cách tài liệu chính thức:
+
+```markdown
+# CuTins Hack - API Documentation
+
+## `Library:Init(config)`
+Khởi tạo giao diện. Tên gốc "CuTins Hack" đã được gắn cứng và không thể thay đổi.
+- **config** (table):
+  - `Game` (string): Tên game hiển thị ở nút mở.
+
+## `Library:CreateTab(name)`
+Tạo một tab mới trên thanh trượt.
+- **name** (string): Tên tab (viết in hoa tự động).
+- **Trả về**: `Frame` (vùng chứa của tab để truyền vào các hàm tạo thành phần bên dưới).
+
+## `Library:CreateToggle(parent, label, desc, default, callback)`
+Tạo công tắc bật/tắt.
+- **parent**: Tab trả về từ `CreateTab`.
+- **label**: Tiêu đề.
+- **desc**: Mô tả phụ (có thể để `nil`).
+- **default**: `true`/`false`.
+- **callback**: `function(state) ... end` - trả về trạng thái mới.
+
+## `Library:CreateButton(parent, text, callback)`
+Tạo nút bấm.
+- **callback**: `function() ... end`.
+
+## `Library:CreateSlider(parent, label, min, max, default, callback)`
+Tạo thanh trượt.
+- **callback**: `function(value) ... end`.
+
+## `Library:CreateTextBox(parent, label, default, callback)`
+Tạo ô nhập văn bản.
+- **callback**: Kích hoạt khi nhấn Enter hoặc mất focus.
+
+## `Library:Notify(title, text)`
+Hiển thị popup ở góc phải màn hình.
+- Tự động biến mất sau 3 giây.
