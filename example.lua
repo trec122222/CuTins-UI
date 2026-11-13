@@ -1,6 +1,6 @@
 --// CÁCH DÙNG CUTINS HACK UI
 -- Tải Library từ GitHub của bạn
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TenCuaBan/CuTins/main/source.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/trec122222/CuTins-UI/refs/heads/main/source.lua"))()
 
 -- Khởi tạo UI (Chỉ cần truyền Game Name)
 Library:Init({
