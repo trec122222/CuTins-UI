@@ -1,44 +1,37 @@
-# CuTins Hack - API Documentation
+# CuTins Hack - UI Library
 
-## `Library:Init(config)`
-Khởi tạo giao diện. Tên gốc "CuTins Hack" đã được gắn cứng.
-- **config** (table):
-  - `Game` (string): Tên game hiển thị ở nút mở.
+A professional, high-performance Roblox UI Library inspired by Rayfield. Built for smooth animations, mobile compatibility, and absolute branding security.
 
-## `Library:CreateTab(name)`
-Tạo tab mới. Trả về `Frame` để truyền vào các hàm con.
-- **name** (string): Tên tab (tự động in hoa).
+> ⚠️ **Notice:** The name **"CuTins Hack"** is strictly hardcoded. You **cannot** modify, rebrand, or remove the name, watermark, or footer. Any attempt to do so will be automatically reverted by the library.
 
-## `Library:CreateSection(parentTab, text)`
-Tạo tiêu đề nhóm (như "Combat", "Visual") bên trong tab.
-- **parentTab**: Tab trả về từ `CreateTab`.
-- **text**: Tiêu đề nhóm.
+---
 
-## `Library:CreateToggle(parent, label, desc, default, callback)`
-Tạo công tắc.
-- **label** (string): Tên tính năng.
-- **desc** (string/nil): Mô tả phụ.
-- **default** (boolean): Trạng thái ban đầu.
-- **callback**: `function(state) ... end` trả về `true/false`.
+## ✨ Features
 
-## `Library:CreateButton(parent, text, callback)`
-Tạo nút bấm.
-- **callback**: `function() ... end`.
+- 🎨 **Rayfield-Inspired Design** – Dark theme with neon accents and smooth `Quint/Bounce` animations.
+- 🔒 **Hardcoded Branding** – Name `CuTins Hack` is locked in the Launcher, Header, Footer, and an invisible Watermark.
+- 📱 **Mobile Optimized** – Auto-resizes to fit small screens (iPhone SE, etc.), with large touch targets.
+- 📜 **Scrolling Support** – Vertical scrolling for long feature lists, horizontal scrolling for tabs.
+- 🧩 **Sections** – Group features visually (e.g., "Combat", "Visual", "Misc") just like Rayfield.
+- 🎛️ **Rich Components** – Toggles, Buttons, Sliders, TextBoxes, Dropdowns, and Notifications.
+- ⚡ **Zero-Lag Animations** – Uses `Tween.Completed` instead of `task.wait()` for buttery-smooth transitions.
+- 🛡️ **Anti-Spam** – Buttons and toggles are protected against rapid-click glitches.
+- 🔔 **Notification System** – Pop-up notifications in the corner of the screen.
 
-## `Library:CreateSlider(parent, label, min, max, default, callback)`
-Tạo thanh trượt.
-- **min/max** (number): Giới hạn dưới/trên.
-- **default** (number): Giá trị ban đầu.
-- **callback**: `function(value) ... end`.
+---
 
-## `Library:CreateTextBox(parent, label, default, callback)`
-Tạo ô nhập văn bản.
-- **callback**: Kích hoạt khi mất focus (click ra ngoài).
+## 🚀 Quick Start
 
-## `Library:CreateDropdown(parent, label, list, callback)`
-Tạo hộp chọn (xổ xuống).
-- **list** (table): Mảng các lựa chọn (VD: `{"A", "B", "C"}`).
-- **callback**: `function(selected) ... end`.
+Load the library using `loadstring` and initialize it with your game name:
 
-## `Library:Notify(title, text)`
-Hiển thị thông báo ở góc phải màn hình (tự ẩn sau 3s).
+```lua
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/trec122222/CuTins-UI/refs/heads/main/source.lua"))()
+
+Library:Init({
+    Game = "Blox Fruits"
+})
+
+local Tab = Library:CreateTab("Main")
+Library:CreateButton(Tab, "Hello World", function()
+    Library:Notify("CuTins Hack", "It works!")
+end)
