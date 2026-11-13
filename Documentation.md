@@ -1,30 +1,25 @@
-
----
-
-### 4. File `Documentation.md` (Hướng dẫn API)
-
-File này giúp Au hiểu rõ các hàm. Viết theo phong cách tài liệu chính thức:
-
-```markdown
 # CuTins Hack - API Documentation
 
 ## `Library:Init(config)`
-Khởi tạo giao diện. Tên gốc "CuTins Hack" đã được gắn cứng và không thể thay đổi.
+Khởi tạo giao diện. Tên gốc "CuTins Hack" đã được gắn cứng.
 - **config** (table):
   - `Game` (string): Tên game hiển thị ở nút mở.
 
 ## `Library:CreateTab(name)`
-Tạo một tab mới trên thanh trượt.
-- **name** (string): Tên tab (viết in hoa tự động).
-- **Trả về**: `Frame` (vùng chứa của tab để truyền vào các hàm tạo thành phần bên dưới).
+Tạo tab mới. Trả về `Frame` để truyền vào các hàm con.
+- **name** (string): Tên tab (tự động in hoa).
+
+## `Library:CreateSection(parentTab, text)`
+Tạo tiêu đề nhóm (như "Combat", "Visual") bên trong tab.
+- **parentTab**: Tab trả về từ `CreateTab`.
+- **text**: Tiêu đề nhóm.
 
 ## `Library:CreateToggle(parent, label, desc, default, callback)`
-Tạo công tắc bật/tắt.
-- **parent**: Tab trả về từ `CreateTab`.
-- **label**: Tiêu đề.
-- **desc**: Mô tả phụ (có thể để `nil`).
-- **default**: `true`/`false`.
-- **callback**: `function(state) ... end` - trả về trạng thái mới.
+Tạo công tắc.
+- **label** (string): Tên tính năng.
+- **desc** (string/nil): Mô tả phụ.
+- **default** (boolean): Trạng thái ban đầu.
+- **callback**: `function(state) ... end` trả về `true/false`.
 
 ## `Library:CreateButton(parent, text, callback)`
 Tạo nút bấm.
@@ -32,12 +27,18 @@ Tạo nút bấm.
 
 ## `Library:CreateSlider(parent, label, min, max, default, callback)`
 Tạo thanh trượt.
+- **min/max** (number): Giới hạn dưới/trên.
+- **default** (number): Giá trị ban đầu.
 - **callback**: `function(value) ... end`.
 
 ## `Library:CreateTextBox(parent, label, default, callback)`
 Tạo ô nhập văn bản.
-- **callback**: Kích hoạt khi nhấn Enter hoặc mất focus.
+- **callback**: Kích hoạt khi mất focus (click ra ngoài).
+
+## `Library:CreateDropdown(parent, label, list, callback)`
+Tạo hộp chọn (xổ xuống).
+- **list** (table): Mảng các lựa chọn (VD: `{"A", "B", "C"}`).
+- **callback**: `function(selected) ... end`.
 
 ## `Library:Notify(title, text)`
-Hiển thị popup ở góc phải màn hình.
-- Tự động biến mất sau 3 giây.
+Hiển thị thông báo ở góc phải màn hình (tự ẩn sau 3s).
