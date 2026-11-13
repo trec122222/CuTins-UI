@@ -8,7 +8,7 @@ A professional, high-performance Roblox UI Library inspired by Rayfield. Built f
 
 ## ✨ Features
 
-- 🎨 **Rayfield-Inspired Design** – Dark theme with neon accents and smooth `Quint/Bounce` animations.
+- 🎨 **Cutins Design** – Dark theme with neon accents and smooth `Quint/Bounce` animations.
 - 🔒 **Hardcoded Branding** – Name `CuTins Hack` is locked in the Launcher, Header, Footer, and an invisible Watermark.
 - 📱 **Mobile Optimized** – Auto-resizes to fit small screens (iPhone SE, etc.), with large touch targets.
 - 📜 **Scrolling Support** – Vertical scrolling for long feature lists, horizontal scrolling for tabs.
