@@ -12,7 +12,7 @@ A professional, high-performance Roblox UI Library inspired by Rayfield. Built f
 ## 🚀 Quick Start
 
 ```lua
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/source.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/trec122222/CuTins-UI/refs/heads/main/source.lua"))()
 
 Library:Init({
     Game = "Blox Fruits"
